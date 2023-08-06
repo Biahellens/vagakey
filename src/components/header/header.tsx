@@ -2,6 +2,7 @@ import React from 'react'
 import clsx from 'clsx'
 import styles from './header.module.scss'
 import vk from '../../assets/icons/vkIcon.svg'
+import { Link } from 'react-router-dom'
 
 function Header() {
   return (
@@ -29,7 +30,7 @@ function Header() {
         <div className={styles.login}>
           <a>
             <button type='submit'>
-              <p>Login</p>
+              <Link to='/login'><p>Login</p></Link>
             </button>
           </a>
         </div>
