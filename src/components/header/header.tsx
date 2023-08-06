@@ -30,7 +30,7 @@ function Header() {
         <div className={styles.login}>
           <a>
             <button type='submit'>
-              <Link to='/login'><p>Login</p></Link>
+              <Link to='/loginPartner'><p>Login</p></Link>
             </button>
           </a>
         </div>
