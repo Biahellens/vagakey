@@ -17,13 +17,14 @@ import {
   IconImage,
   Image,
   Contents,
-  ContentBottom
+  ContentBottom,
+  InputContent
 } from './styles'
 import { Link } from 'react-router-dom'
 import vk from '../../assets/icons/vkIcon.svg'
 import cars from '../../assets/imgs/carsPurple.svg'
 
-export function LoginPartner() {
+export function CreateAccountPartner() {
   return (
     <div>
       <body>
@@ -40,21 +41,30 @@ export function LoginPartner() {
             <FormContent>
               <Top>
                 <Textop $primary>Empresa</Textop>
-                <Textop><Link to='/loginCustomer'>Cliente</Link></Textop>
+                <Textop><Link to='/createAccountCustomer'>Cliente</Link></Textop>
               </Top>
               <Content>
-                <Title>Iniciar Sessão</Title>
-                <Text><Link to="/createAccountPartner">Não possuo cadastro</Link></Text>
+                <Title>Cadastre-se</Title>
+                <Text>É rápido e fácil</Text>
                 <ContentBottom>
                   <FormLogin>
-                    <InputArea $primary placeholder='CNPJ' required/> 
-                    <InputArea $primary placeholder='Senha' required/>
+                    <InputContent>
+                      <InputArea $primary placeholder='Razão Social' required/>
+                      <InputArea $primary placeholder='CNPJ' required/> 
+                    </InputContent>
+                    <InputContent>
+                      <InputArea $email placeholder='E-mail' required/> 
+                      <InputArea placeholder='Telefone' required/>
+                    </InputContent>
+                    <InputContent>
+                      <InputArea $primary placeholder='Senha' required/>
+                      <InputArea $primary placeholder='Confirmação de Senha' required/> 
+                    </InputContent>
                     <ButtonContent>
-                      <Button><Link to='/'>Entrar</Link></Button>
+                      <Button><Link to='/'>Criar Conta</Link></Button>
                     </ButtonContent>
                   </FormLogin>
                   <BottomContent>
-                    <p>Esqueci minha senha</p>
                     <p>Problemas para entrar? Fale conosco</p>
                   </BottomContent>
                 </ContentBottom>
@@ -67,7 +77,7 @@ export function LoginPartner() {
   )
 }
 
-export function LoginCustomer() {
+export function CreateAccountCustomer() {
   return (
     <div>
       <body>
@@ -83,22 +93,31 @@ export function LoginCustomer() {
             </ImageContent>
             <FormContent>
               <Top>
-                <Textop><Link to='/loginPartner'>Empresa</Link></Textop>
+                <Textop><Link to='/createAccountPartner'>Empresa</Link></Textop>
                 <Textop $primary>Cliente</Textop>
               </Top>
               <Content>
-                <Title>Iniciar Sessão</Title>
-                <Text><Link to="/createAccountPartner">Não possuo cadastro</Link></Text>
+                <Title>Cadastre-se</Title>
+                <Text>É rápido e fácil</Text>
                 <ContentBottom>
                   <FormLogin>
-                    <InputArea $primary placeholder='CPF' required/> 
-                    <InputArea $primary placeholder='Senha' required/>
+                    <InputContent>
+                      <InputArea $primary placeholder='Nome' required/>
+                      <InputArea $primary placeholder='CPF' required/> 
+                    </InputContent>
+                    <InputContent>
+                      <InputArea $email placeholder='E-mail' required/> 
+                      <InputArea placeholder='Telefone' required/>
+                    </InputContent>
+                    <InputContent>
+                      <InputArea $primary placeholder='Senha' required/>
+                      <InputArea $primary placeholder='Confirmação de Senha' required/> 
+                    </InputContent>
                     <ButtonContent>
-                      <Button><Link to='/'>Entrar</Link></Button>
+                      <Button><Link to='/'>Criar Conta</Link></Button>
                     </ButtonContent>
                   </FormLogin>
                   <BottomContent>
-                    <p>Esqueci minha senha</p>
                     <p>Problemas para entrar? Fale conosco</p>
                   </BottomContent>
                 </ContentBottom>
