@@ -18,7 +18,8 @@ import {
   Image,
   Contents,
   ContentBottom,
-  InputContent
+  InputContent,
+  InputAreaPassword
 } from './styles'
 import { Link } from 'react-router-dom'
 import vk from '../../assets/icons/vkIcon.svg'
@@ -57,11 +58,13 @@ export function CreateAccountPartner() {
                       <InputArea placeholder='Telefone' required/>
                     </InputContent>
                     <InputContent>
-                      <InputArea $primary placeholder='Senha' required/>
-                      <InputArea $primary placeholder='Confirmação de Senha' required/> 
+                      <InputAreaPassword placeholder='Senha' required/>
+                      <InputAreaPassword placeholder='Confirmação de Senha' required/> 
                     </InputContent>
                     <ButtonContent>
-                      <Button><Link to='/'>Criar Conta</Link></Button>
+                      <Link to='/'>
+                        <Button placeholder="Criar Conta"/>
+                      </Link>
                     </ButtonContent>
                   </FormLogin>
                   <BottomContent>
@@ -110,11 +113,13 @@ export function CreateAccountCustomer() {
                       <InputArea placeholder='Telefone' required/>
                     </InputContent>
                     <InputContent>
-                      <InputArea $primary placeholder='Senha' required/>
-                      <InputArea $primary placeholder='Confirmação de Senha' required/> 
+                      <InputAreaPassword placeholder='Senha' required/>
+                      <InputAreaPassword placeholder='Confirmação de Senha' required/> 
                     </InputContent>
                     <ButtonContent>
-                      <Button><Link to='/'>Criar Conta</Link></Button>
+                      <Link to='/'>
+                        <Button placeholder="Criar Conta"/>
+                      </Link>
                     </ButtonContent>
                   </FormLogin>
                   <BottomContent>

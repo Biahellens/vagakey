@@ -117,6 +117,28 @@ export const InputArea = styled.input.attrs(props => ({
     box-shadow: 0px 4px 20px 0px #8400FF;
   }
 `
+export const InputAreaPassword = styled.input.attrs(props => ({
+  type: 'password',
+}))`
+  margin: 0.5rem;
+  width: 320px;
+  height: 54px;
+  padding: 0px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #FFFFFF;
+  color: #282828;
+  outline: none;
+  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+  transition: 0.3s background-color ease-in-out, 0.3s box-shadow ease-in-out, 0.1s padding ease-in-out; -webkit-appearance: none;
+  
+  &:hover{
+    box-shadow: 0px 4px 20px 0px #8400FF;
+  }
+`
 
 export const ButtonContent = styled.div`
   display: flex;
@@ -124,7 +146,9 @@ export const ButtonContent = styled.div`
   height: 100px;
 `
 
-export const Button = styled.button`
+export const Button = styled.input.attrs(props => ({
+  type: 'submit',
+}))`
   width: 160px;
   height: 50px;
 
