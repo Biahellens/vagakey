@@ -1,3 +1,4 @@
+![Hortinja](https://github.com/Biahellens/vagakey/blob/main/src/assets/icons/vkIcon.svg)
 #  Vagakey
 
 Projeto desenvolvido para cadastro de vendedores.
