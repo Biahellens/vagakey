@@ -19,9 +19,9 @@ import {
   Contents,
   ContentBottom,
   InputContent,
-  InputAreaPassword
+  InputAreaPassword,
+  Linkinho
 } from './styles'
-import { Link } from 'react-router-dom'
 import vk from '../../assets/icons/vkIcon.svg'
 import cars from '../../assets/imgs/carsPurple.svg'
 
@@ -42,7 +42,7 @@ export function CreateAccountPartner() {
             <FormContent>
               <Top>
                 <Textop $primary>Empresa</Textop>
-                <Textop><Link to='/createAccountCustomer'>Cliente</Link></Textop>
+                <Textop><Linkinho to='/createAccountCustomer'>Cliente</Linkinho></Textop>
               </Top>
               <Content>
                 <Title>Cadastre-se</Title>
@@ -62,9 +62,9 @@ export function CreateAccountPartner() {
                       <InputAreaPassword placeholder='Confirmação de Senha' required/> 
                     </InputContent>
                     <ButtonContent>
-                      <Link to='/'>
+                      <Linkinho to='/'>
                         <Button placeholder="Criar Conta"/>
-                      </Link>
+                      </Linkinho>
                     </ButtonContent>
                   </FormLogin>
                   <BottomContent>
@@ -96,7 +96,7 @@ export function CreateAccountCustomer() {
             </ImageContent>
             <FormContent>
               <Top>
-                <Textop><Link to='/createAccountPartner'>Empresa</Link></Textop>
+                <Textop><Linkinho to='/createAccountPartner'>Empresa</Linkinho></Textop>
                 <Textop $primary>Cliente</Textop>
               </Top>
               <Content>
@@ -117,9 +117,9 @@ export function CreateAccountCustomer() {
                       <InputAreaPassword placeholder='Confirmação de Senha' required/> 
                     </InputContent>
                     <ButtonContent>
-                      <Link to='/'>
+                      <Linkinho to='/'>
                         <Button placeholder="Criar Conta"/>
-                      </Link>
+                      </Linkinho>
                     </ButtonContent>
                   </FormLogin>
                   <BottomContent>

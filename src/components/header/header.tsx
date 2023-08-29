@@ -3,6 +3,7 @@ import clsx from 'clsx'
 import styles from './header.module.scss'
 import vk from '../../assets/icons/vkIcon.svg'
 import { Link } from 'react-router-dom'
+import { LinkHeader } from './styles'
 
 function Header() {
   return (
@@ -17,20 +18,23 @@ function Header() {
               <p>Home</p>
             </div>
             <div className={clsx(styles.link, [styles.pages])}>
-              <p>Aplicativo</p>
+              <LinkHeader to='/aboutApp'><p>Sobre o aplicativo</p></LinkHeader>
             </div>
             <div className={clsx(styles.link, [styles.pages])}>
-              <p>Mapa de Vagas</p>
+            <LinkHeader to='/aboutApp'><p>Mapa de Vagas</p></LinkHeader>
             </div>
             <div className={clsx(styles.link, [styles.pages])}>
-              <p>Custos</p>
+              <LinkHeader to='/aboutApp'><p>Custos</p></LinkHeader>
+            </div>
+            <div className={clsx(styles.link, [styles.pages])}>
+              <LinkHeader to='/aboutApp'><p>Contate-nos</p></LinkHeader>
             </div>
           </div>
         </div>
         <div className={styles.login}>
           <a>
             <button type='submit'>
-              <Link to='/loginPartner'><p>Login</p></Link>
+              <LinkHeader to='/loginPartner'><p>Login</p></LinkHeader>
             </button>
           </a>
         </div>
