@@ -76,13 +76,13 @@ export const BottomContent = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
 `
 
 export const EditContent = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 300px;
+  width: 40%;
   height: 300px;
 
   border-radius: 20px;
@@ -92,7 +92,6 @@ export const EditContent = styled.div`
 
   margin-top: 6rem;
   margin-bottom: 6rem;
-  margin-left: 10rem;
 
   font-size: 20px;
   color: rgba(113, 113, 113, 0.72);
@@ -101,21 +100,21 @@ export const EditContent = styled.div`
   align-content: baseline;
 `
 export const Text = styled.text`
-  font-size: 20px;
+  font-size: 24px;
   text-align: justify;
   font-weight: 500;
   width: 100%;
   margin-left: 1rem;
 `
 export const H2 = styled.h2`
-  font-size: 28px;
+  font-size: 34px;
   color: #3F0774;
   padding: 0.4rem;
   font-weight: bolder;
 `
 
 export const H3 = styled.h2`
-  font-size: 22px;
+  font-size: 28px;
   color: #E51F85;
   padding: 0.4rem;
   font-weight: bolder;

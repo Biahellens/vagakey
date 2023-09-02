@@ -61,16 +61,16 @@ export function VacancyMapPartner() {
               <Button>Editar Mapa</Button>
             </ContentText>
             <Map />
+            <BottomContent>
+              <EditContent>
+                <H2>Dados</H2>
+                <Text>Total ganho no dia:</Text>
+                <H3>Piso 1</H3>
+                <Text>Vagas Ocupadas:</Text>
+                <Text>Vagas Livres:</Text>
+              </EditContent>
+            </BottomContent>
           </Contents>
-          <BottomContent>
-            <EditContent>
-              <H2>Dados</H2>
-              <Text>Total ganho no dia:</Text>
-              <H3>Piso 1</H3>
-              <Text>Vagas Ocupadas:</Text>
-              <Text>Vagas Livres:</Text>
-            </EditContent>
-          </BottomContent>
         </Main>
       </body>
     </div>
