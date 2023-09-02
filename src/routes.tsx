@@ -6,7 +6,9 @@ import {
     LoginCustomer, 
     CreateAccountCustomer, 
     CreateAccountPartner, 
-    AboutApp 
+    AboutApp,
+    VacancyMapCustomer,
+    VacancyMapPartner
 } from './pages/index'
 
 const AppRoutes = () => {
@@ -19,6 +21,8 @@ const AppRoutes = () => {
             <Route element = {<CreateAccountCustomer />}  path="/createAccountCustomer" />
             <Route element = {<CreateAccountPartner />}  path="/createAccountPartner" />
             <Route element = {<AboutApp />} path="/aboutApp" />
+            <Route element = {<VacancyMapCustomer />} path='/vacancyMapCustomer' />
+            <Route element = {<VacancyMapPartner />} path='/vacancyMapPartner' />
         </Routes>
        </BrowserRouter>
    )

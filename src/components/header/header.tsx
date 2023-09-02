@@ -21,13 +21,13 @@ function Header() {
               <LinkHeader to='/aboutApp'><p>Sobre o aplicativo</p></LinkHeader>
             </div>
             <div className={clsx(styles.link, [styles.pages])}>
-            <LinkHeader to='/aboutApp'><p>Mapa de Vagas</p></LinkHeader>
+            <LinkHeader to='/vacancyMapCustomer'><p>Mapa de Vagas</p></LinkHeader>
             </div>
             <div className={clsx(styles.link, [styles.pages])}>
               <LinkHeader to='/aboutApp'><p>Custos</p></LinkHeader>
             </div>
             <div className={clsx(styles.link, [styles.pages])}>
-              <LinkHeader to='/aboutApp'><p>Contate-nos</p></LinkHeader>
+              <LinkHeader to='/'><p>Contate-nos</p></LinkHeader>
             </div>
           </div>
         </div>
