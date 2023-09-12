@@ -3,6 +3,7 @@ import Home from "./home/Home"
 import { CreateAccountCustomer, CreateAccountPartner } from "./createAccount/CreateAccount"
 import { AboutApp } from './aboutApp/AboutApp'
 import { VacancyMapCustomer, VacancyMapPartner } from './vacancyMap/VacancyMap'
+import Loading from './loading/Loading'
 export {
     LoginCustomer,
     LoginPartner,
@@ -11,5 +12,6 @@ export {
     Home,
     AboutApp,
     VacancyMapCustomer,
-    VacancyMapPartner
+    VacancyMapPartner,
+    Loading
 }
