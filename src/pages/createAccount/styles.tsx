@@ -72,18 +72,18 @@ export const Title = styled.h1`
   color: rgba(229, 31, 133, 0.53);
   font-size: 36px;
   font-weight: 900;
-  width: 100%;
   display: flex;
   justify-content: center;
+  align-content: center;
 `
 
 export const Text = styled.p`
   color: #2B0152;
   font-size: 16px;
   font-weight: bold;
-  width: 100%;
   display: flex;
   justify-content: center;
+  align-content: center;
 `
 
 export const FormLogin = styled.form`
@@ -92,6 +92,7 @@ export const FormLogin = styled.form`
   justify-content: center;
   align-content: center;
   padding: 3rem;
+  width: 75%;
 `
 
 export const InputContent = styled.form`
