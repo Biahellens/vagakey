@@ -12,6 +12,7 @@ import {
   Button,
   EditContent,
   BottomContent,
+  LinkHeader
 } from './styles'
 import { Header } from '../../components/index'
 
@@ -58,16 +59,16 @@ export function VacancyMapPartner() {
           <Contents>
             <ContentText>
               <H1>Olá Empresa, esse é seu mapa de vagas atualmente</H1>
-              <Button>Editar Mapa</Button>
+              <Button><LinkHeader to='/editMap'><p>Editar Mapa</p></LinkHeader></Button>
             </ContentText>
             <Map />
             <BottomContent>
               <EditContent>
                 <H2>Dados</H2>
-                <Text>Total ganho no dia:</Text>
+                <Text>Total ganho no dia: <Text>R$27.80</Text></Text>
                 <H3>Piso 1</H3>
-                <Text>Vagas Ocupadas:</Text>
-                <Text>Vagas Livres:</Text>
+                <Text>Vagas Ocupadas: <Text>5</Text></Text>
+                <Text>Vagas Livres: <Text>5</Text></Text>
               </EditContent>
             </BottomContent>
           </Contents>

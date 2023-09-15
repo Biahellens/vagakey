@@ -4,6 +4,7 @@ import { CreateAccountCustomer, CreateAccountPartner } from "./createAccount/Cre
 import { AboutApp } from './aboutApp/AboutApp'
 import { VacancyMapCustomer, VacancyMapPartner } from './vacancyMap/VacancyMap'
 import Loading from './loading/Loading'
+import { EditMap } from './vacancyMap/editMap/EditMap'
 export {
     LoginCustomer,
     LoginPartner,
@@ -13,5 +14,6 @@ export {
     AboutApp,
     VacancyMapCustomer,
     VacancyMapPartner,
-    Loading
+    Loading,
+    EditMap
 }

@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 import Select from "react-select"
 
+import { Link } from 'react-router-dom'
+
+export const LinkHeader = styled(Link)`
+  text-decoration: none;
+  color: #FFFFFF;
+`
+
 export const Main = styled.div`
   width: 100%;
   height: 100%;
