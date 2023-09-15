@@ -64,6 +64,12 @@ export const Box = styled.div`
 export const BoxPlanText = styled.div`
  padding: 1.2rem;
  width: 100%;
+ display: flex;
+ flex-wrap: wrap;
+ align-content: space-between
+`
+export const Texts = styled.div`
+ width: 100%;
  text-align: flex-start;
  align-content: flex-start;
  display: flex;
@@ -114,6 +120,6 @@ export const BottomContent = styled.div`
   margin: 0.5rem;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  align-content: flex-end;
 `
