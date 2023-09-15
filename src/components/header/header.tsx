@@ -24,7 +24,7 @@ function Header() {
             <LinkHeader to='/vacancyMapCustomer'><p>Mapa de Vagas</p></LinkHeader>
             </div>
             <div className={clsx(styles.link, [styles.pages])}>
-              <LinkHeader to='/loading'><p>Custos</p></LinkHeader>
+              <LinkHeader to='/plans'><p>Planos</p></LinkHeader>
             </div>
             <div className={clsx(styles.link, [styles.pages])}>
               <LinkHeader to='/loading'><p>Contate-nos</p></LinkHeader>
