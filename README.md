@@ -26,16 +26,16 @@ O projeto foi construido de maneira desacoplada, sendo assim, o server desenvolv
 
 ### Server
 
-O server foi construido utilizando o [Java](https://www.java.com/pt-BR/), que era uma linguagem obrigatória para o nosso backend. E também foi utilizado o [Docker](docker.com) para separar o backend em um container. Antes de iniciarmos o server, precisamos instalar as suas dependencias, para isso, vamos utilizar o yarn como nosso gerenciador de dependencias e executar o seguinte comando no terminal:
+O server foi construido utilizando o [Java](https://www.java.com/pt-BR/), que era uma linguagem obrigatória para o nosso backend. E também foi utilizado o [Docker](docker.com) para separar o backend em um container. Com tudo configurado é possível estar subindo os contêineres para a aplicação estar no ar através do seguinte comando:
 
 ```bash
-$ yarn server:install
+$ docker build -t vagakey
 ```
 
-agora com o as dependencias do server instaladas, podemos estar inicializando com através do comando:
+agora, podemos estar inicializando com através do comando:
 
 ```bash
-$ yarn server:start
+$ docker run -p 8080:8080 --name vagakey vagakey:lasted
 ```
 
 que ficará disponivel na seguninte url: [localhost:8080](http://localhost:8080).
