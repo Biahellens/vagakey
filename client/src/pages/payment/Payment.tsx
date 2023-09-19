@@ -63,7 +63,7 @@ export function Payment () {
                       <InputArea value={cvv} onChange={(e) => setCvv(e.target.value)} required />
                     </ContentBottom>
                     <ButtonContent>
-                      <Button type="submit">Pagar</Button>
+                      <Button type="submit"><Linkinho to='/'>Pagar</Linkinho></Button>
                     </ButtonContent>
                   </FormLogin>
                   {mensagem && <p>{mensagem}</p>}
