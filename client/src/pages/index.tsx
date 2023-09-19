@@ -6,6 +6,8 @@ import { VacancyMapCustomer, VacancyMapPartner } from './vacancyMap/VacancyMap'
 import Loading from './loading/Loading'
 import { EditMap } from './vacancyMap/editMap/EditMap'
 import { Plans } from './plans/Plans'
+import { Payment } from './payment/Payment'
+
 export {
     LoginCustomer,
     LoginPartner,
@@ -17,5 +19,6 @@ export {
     VacancyMapPartner,
     Loading,
     EditMap,
-    Plans
+    Plans,
+    Payment
 }

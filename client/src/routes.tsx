@@ -11,7 +11,8 @@ import {
     VacancyMapPartner,
     Loading,
     EditMap,
-    Plans
+    Plans,
+    Payment
 } from './pages/index'
 
 const AppRoutes = () => {
@@ -29,6 +30,7 @@ const AppRoutes = () => {
             <Route element = {<Loading />} path='/loading'/>
             <Route element = {<EditMap />} path='/editMap'/>
             <Route element = {<Plans/>} path='/plans' />
+            <Route element = {<Payment/>} path='/payment' />
         </Routes>
        </BrowserRouter>
    )
