@@ -1,0 +1,19 @@
+{
+  "name": "vagakey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server:install": "cd server && yarn install",
+    "server:start": "cd server && yarn dev:debug",
+    "client:install": "cd client && yarn install",
+    "client:start": "cd client && yarn start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Biahellens/vagakey.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://github.com/Biahellens/vagakey#readme"
+}

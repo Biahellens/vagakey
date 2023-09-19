@@ -1,7 +1,10 @@
 {
   "name": "vagakey",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "Front-end da aplicação Hortinja",
+  "main": "src/App.tsx",
+  "license": "MIT",
   "dependencies": {
     "@fnando/cnpj": "^1.0.2",
     "@styled-icons/material": "^10.47.0",
