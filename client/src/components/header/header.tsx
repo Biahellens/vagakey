@@ -15,7 +15,7 @@ function Header() {
           </div>
           <div className={styles.links}>
             <div className={clsx(styles.link, [styles.actualPage])}>
-              <p>Home</p>
+              <LinkHeader to='/'><p>Home</p></LinkHeader>
             </div>
             <div className={clsx(styles.link, [styles.pages])}>
               <LinkHeader to='/aboutApp'><p>Sobre o aplicativo</p></LinkHeader>

@@ -1,6 +1,13 @@
 import styled from 'styled-components'
 import { Check } from "@styled-icons/material"
 
+import { Link } from 'react-router-dom'
+
+export const Linkinho= styled(Link)`
+  text-decoration: none;
+  color: rgba(79, 10, 143, 1);
+`
+
 export const Main = styled.div`
   width: 100%;
   height: 100%;

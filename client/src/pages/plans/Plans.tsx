@@ -15,7 +15,8 @@ import {
   Box,
   BottomContent,
   Button,
-  Texts
+  Texts,
+  Linkinho
 } from './styles'
 import Header from '../../components/header/header'
 
@@ -44,7 +45,7 @@ export function Plans() {
                       <Text><CheckItem /> Atendimento ao cliente dedicado para assistência rápida.</Text>
                     </Texts>
                     <BottomContent>
-                      <Button>Adiquirir</Button>
+                      <Button><Linkinho to='/payment'>Adiquirir</Linkinho></Button>
                     </BottomContent>
                   </BoxPlanText>
                 </BoxPlan>
@@ -61,7 +62,7 @@ export function Plans() {
                       <Text><CheckItem /> Atendimento ao cliente dedicado com suporte prioritário.</Text>
                     </Texts>
                     <BottomContent>
-                      <Button>Adiquirir</Button>
+                      <Button><Linkinho to='/payment'>Adiquirir</Linkinho></Button>
                     </BottomContent>
                   </BoxPlanText>
                 </BoxPlan>
@@ -79,7 +80,7 @@ export function Plans() {
                       <Text><CheckItem /> Personalização da interface do aplicativo com a marca da empresa.</Text>
                     </Texts>
                     <BottomContent>
-                      <Button>Adiquirir</Button>
+                      <Button><Linkinho to='/payment'>Adiquirir</Linkinho></Button>
                     </BottomContent>
                   </BoxPlanText>
                 </BoxPlan>
@@ -99,7 +100,7 @@ export function Plans() {
                       <Text><CheckItem /> Desconto de 10% em todas as reservas realizadas durante o trimestre. </Text>
                     </Texts>
                     <BottomContent>
-                      <Button>Adiquirir</Button>
+                      <Button><Linkinho to='/payment'>Adiquirir</Linkinho></Button>
                     </BottomContent>
                   </BoxPlanText>
                 </BoxPlan>
@@ -115,7 +116,7 @@ export function Plans() {
                       <Text><CheckItem /> Uma vaga de estacionamento gratuita por mês. </Text>
                     </Texts>
                     <BottomContent>
-                      <Button>Adiquirir</Button>
+                      <Button><Linkinho to='/payment'>Adiquirir</Linkinho></Button>
                     </BottomContent>
                   </BoxPlanText>
                 </BoxPlan>
@@ -132,7 +133,7 @@ export function Plans() {
                       <Text><CheckItem /> Atendimento ao cliente premium com suporte prioritário. </Text>
                     </Texts>
                     <BottomContent>
-                      <Button>Adiquirir</Button>
+                      <Button><Linkinho to='/payment'>Adiquirir</Linkinho></Button>
                     </BottomContent>
                   </BoxPlanText>
                 </BoxPlan>
