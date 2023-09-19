@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { 
   Main, 
@@ -24,6 +24,16 @@ import vk from '../../assets/icons/vkIcon.svg'
 import cars from '../../assets/imgs/carsPurple.svg'
 
 export function LoginPartner() {
+  const [cnpj, setCnpj] = useState('');
+  const [password, setPassword] = useState('');
+  const [mensagem, setMensagem] = useState('');
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setMensagem('Login feito com sucesso');
+    setCnpj('');
+    setPassword('');
+  };
   return (
     <div>
       <body>
@@ -46,9 +56,9 @@ export function LoginPartner() {
                 <Title>Iniciar Sessão</Title>
                 <Text><Linkinho to="/createAccountPartner">Não possuo cadastro</Linkinho></Text>
                 <ContentBottom>
-                  <FormLogin>
-                    <InputArea $primary placeholder='CNPJ' required/> 
-                    <InputArea $primary placeholder='Senha' required/>
+                  <FormLogin onSubmit={handleSubmit}>
+                    <InputArea $primary placeholder='CNPJ' required value={cnpj} onChange={(e) => setCnpj(e.target.value)}/> 
+                    <InputArea $primary placeholder='Senha' required value={password} onChange={(e) => setPassword(e.target.value)}/>
                     <ButtonContent>
                       <Button><Linkinho to='/'>Entrar</Linkinho></Button>
                     </ButtonContent>
@@ -56,6 +66,7 @@ export function LoginPartner() {
                   <BottomContent>
                     <p>Esqueci minha senha</p>
                     <p>Problemas para entrar? Fale conosco</p>
+                    {mensagem && <p>{mensagem}</p>}
                   </BottomContent>
                 </ContentBottom>
               </Content>
@@ -68,6 +79,17 @@ export function LoginPartner() {
 }
 
 export function LoginCustomer() {
+  const [cpf, setCpf] = useState('');
+  const [password, setPassword] = useState('');
+  const [mensagem, setMensagem] = useState('');
+  
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setMensagem('Login feito com sucesso');
+    setCpf('');
+    setPassword('');
+  };
+
   return (
     <div>
       <body>
@@ -90,9 +112,9 @@ export function LoginCustomer() {
                 <Title>Iniciar Sessão</Title>
                 <Text><Linkinho to="/createAccountPartner">Não possuo cadastro</Linkinho></Text>
                 <ContentBottom>
-                  <FormLogin>
-                    <InputArea $primary placeholder='CPF' required/> 
-                    <InputArea $primary placeholder='Senha' required/>
+                  <FormLogin onSubmit={handleSubmit}>
+                    <InputArea $primary placeholder='CPF' required value={cpf} onChange={(e) => setCpf(e.target.value)}/> 
+                    <InputArea $primary placeholder='Senha' required value={password} onChange={(e) => setPassword(e.target.value)}/>
                     <ButtonContent>
                       <Button><Linkinho to='/'>Entrar</Linkinho></Button>
                     </ButtonContent>
@@ -100,6 +122,7 @@ export function LoginCustomer() {
                   <BottomContent>
                     <p>Esqueci minha senha</p>
                     <p>Problemas para entrar? Fale conosco</p>
+                    {mensagem && <p>{mensagem}</p>}
                   </BottomContent>
                 </ContentBottom>
               </Content>
