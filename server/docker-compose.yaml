@@ -1,0 +1,43 @@
+version: '3'
+services:
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: teste
+      MYSQL_USER: teste
+      MYSQL_PASSWORD: teste
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"  
+    networks:
+      - app_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 3  
+
+  vagakey:
+    image: vagakey:latest
+    container_name: vagakey
+    environment:
+      - SPRING_DATASOURCE_URL=server/db/vagaKey.sql
+      - SPRING_DATASOURCE_USERNAME=teste
+      - SPRING_DATASOURCE_PASSWORD=teste
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+    restart: always
+    networks:
+      - app_network
+
+networks:
+  app_network:
+    name: app_network
+
