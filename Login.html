@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - VagaKey </title>
+    <link rel="stylesheet" href="main.css">
+<body>
+    <div class="menu" onclick="toggleSubmenu()"><img src="./Component 8.png" alt="Logo-VagaKey"></div>
+
+    <div class="submenu" id="submenu">
+        <a href="#">Página Inicial</a>
+        <a href="#">Meu Perfil</a>
+        <a href="#">Histórico</a>
+        <a href="#">Carteira</a>
+        <a href="#">Sair</a>
+    </div>
+
+    <script>
+        function toggleSubmenu() {
+            const submenu = document.getElementById('submenu');
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+    <div class="page">
+        <form method="POST" class="formLogin">
+            <h1>Bem vindo ao VAGAKEY!</h1>
+            <div class="img-carro" id="carro-img"><img src="/Component 7.png" alt="carro-img"></div>
+            <p>Digite os seus dados de acesso no campo abaixo.</p>
+            <label for="email">E-mail</label>
+            <input type="email" placeholder="Digite seu e-mail" autofocus="true" />
+            <label for="password">Senha</label>
+            <input type="password" placeholder="Digite sua senha" />
+            <a href="/">Esqueci minha senha</a>
+            <a href="/">Politica de Privacidade</a>
+            <input type="submit" value="Acessar" class="btn" />
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #023047
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    height: 100px;
+    background-color: #ff009d;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Estilos para o menu */
+
+/* Menu */
+.navbar {
+    background-color: #ff009d; /* Cor de fundo */
+    overflow: hidden;
+}
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none;
+    font-size: 14px;
+}
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+.dropdown .dropbtn {
+    font-size: 14px;
+    border: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    padding: 12px 14px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: rgb(187, 70, 255);
+    color: rgb(255, 255, 255);
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(187, 70, 255);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    float: none;
+    color: rgb(255, 255, 255);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: #ff4ae1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.logo {
+    float: right;
+    padding: 12px 14px;
+    font-size: 14px;
+    color: white;
+ align-items: center;
+}
+
+/* Estilos para os links do submenu */
+.submenu a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+
+
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ff009d; /* Cor de fundo */
+}
+.payment-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: #ffffff; /* Cor de fundo do formulário */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.form-field {
+    margin-bottom: 25px;
+}
+.form-field label {
+    display: block;
+    font-weight: bold;
+}
+.form-field input {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.submit-button {
+    background-color: #480ca8; /* Cor do botão */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Estilos específicos para cada método de pagamento */
+#camposCartao,
+#camposPIX,
+#camposTotem {
+    display: none;
+}

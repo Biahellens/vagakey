@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - VagaKey</title>
+    <!-- Conexão com CSS -->
+    <link rel="stylesheet" href="./main-pag.css">
+</head>
+
+<!-- Menu Interativo -->
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">Histórico</a>
+        <div class="dropdown">
+            <button class="dropbtn">Meu Perfil</button>
+            <div class="dropdown-content">
+                <a href="#webdesign">Carteira</a>
+                <a href="#seo">SEO</a>
+                <a href="#design">Design</a>
+            </div>
+        </div>
+        <a href="#links">O VagaKey</a>
+        <a href="#contact">Contato</a>
+        <div class="logo"><img src="./" alt=""></div>
+    </div>
+</body>
+    <div class="payment-form">
+        <h1>Método de Pagamento</h1>
+        <select id="metodoPagamento" onchange="exibirCampos()">
+            <option value="cartao">Cartão de Crédito/Débito</option>
+            <option value="pix">PIX</option>
+            <option value="totem">Totem</option>
+        </select>
+
+        <!-- Campos para Cartão de Crédito/Débito -->
+        <div id="camposCartao" class="form-field">
+            <label for="numeroCartao">Número do Cartão</label>
+            <input type="text" id="numeroCartao" placeholder="9999 9999 9999 9999">
+            <label for="nomeCartao">Nome do Titular</label>
+            <input type="text" id="nomeCartao">
+            <label for="vencCartao">Data de Vencimento</label>
+            <input type="month" id="vencCartao" >
+            <label for="cvvCartao">CVV</label>  
+            <input type="text" id="cvvCartao" placeholder="999">
+            <!-- Outros campos específicos para cartão -->
+        </div>
+
+        <!-- Campos para PIX -->
+        <div id="camposPIX" class="form-field">
+            <label for="chavePIX">Chave PIX</label>
+            <input type="text" id="chavePIX" placeholder="Chave aleatória">
+            <!-- Outros campos específicos para PIX -->
+        </div>
+
+        <!-- Campos para Totem -->
+        <div id="camposTotem" class="form-field">
+            <label for="codigoTotem">Código Totem</label>
+            <input type="text" id="codigoTotem" placeholder="Código alfanumérico">
+            <!-- Outros campos específicos para Totem -->
+        </div>
+
+        <button class="submit-button">Pagar</button>
+    </div>
+
+    <script>
+        function exibirCampos() {
+            const metodoPagamento = document.getElementById('metodoPagamento').value;
+            const camposCartao = document.getElementById('camposCartao');
+            const camposPIX = document.getElementById('camposPIX');
+            const camposTotem = document.getElementById('camposTotem');
+
+            camposCartao.style.display = metodoPagamento === 'cartao' ? 'block' : 'none';
+            camposPIX.style.display = metodoPagamento === 'pix' ? 'block' : 'none';
+            camposTotem.style.display = metodoPagamento === 'totem' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
