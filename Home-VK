@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VagaKey</title>
+    <link rel="stylesheet" href="main-home.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">Histórico</a>
+        <div class="dropdown">
+            <button class="dropbtn">Meu Perfil</button>
+            <div class="dropdown-content">
+                <a href="#webdesign">Carteira</a>
+                <a href="#seo">SEO</a>
+                <a href="#design">Design</a>
+            </div>
+        </div>
+        <a href="#links">O VagaKey</a>
+        <a href="#contact">Contato</a>
+        <div class="logo"><img src="./logo.png" alt="Logo VagaKey"></div>
+    </div>
+
+    <!-- Home -->
+    <div class="page">
+        <form method="POST" class="home">
+            <h1>Acesse o VagaKey</h1>
+            <input type="submit" value="Cadastre-se" class="btn"> <input type="submit" value="Já tem cadastro? Entre aqui" class="btn-2">
+    </div>
+    </form>
+    </div>
+
+
+</body>
+
+</html>
