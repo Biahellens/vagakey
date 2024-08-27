@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+class DetailsScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final String chave = ModalRoute.of(context)?.settings.arguments as String;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Detalhes da Chave'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              chave,
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 16),
+            Text('Data de Criação: 01/01/2024'),
+            SizedBox(height: 8),
+            Text('Validade: 31/12/2024'),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Clipboard.setData(ClipboardData(text: chave));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Chave copiada para o clipboard!')),
+                );
+              },
+              child: Text('Copiar Chave'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

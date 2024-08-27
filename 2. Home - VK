@@ -1,0 +1,31 @@
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Minhas Chaves'),
+      ),
+      body: ListView.builder(
+        itemCount: 10, // Número de chaves
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text('Chave ${index + 1}'),
+            subtitle: Text('Detalhes da Chave ${index + 1}'),
+            onTap: () {
+              // Navegar para a tela de detalhes da chave
+              Navigator.pushNamed(context, '/details', arguments: index + 1);
+            },
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Lógica para criar uma nova chave
+        },
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}

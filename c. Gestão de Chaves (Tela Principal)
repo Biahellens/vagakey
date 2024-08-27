@@ -1,0 +1,55 @@
+import 'package:flutter/material.dart';
+
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<String> _keys = [];
+
+  void _addKey() {
+    setState(() {
+      _keys.add('Chave ${_keys.length + 1}');
+    });
+  }
+
+  void _deleteKey(int index) {
+    setState(() {
+      _keys.removeAt(index);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Minhas Chaves'),
+      ),
+      body: _keys.isEmpty
+          ? Center(child: Text('Nenhuma chave encontrada.'))
+          : ListView.builder(
+              itemCount: _keys.length,
+              itemBuilder: (context, index) {
+                return Dismissible(
+                  key: Key(_keys[index]),
+                  background: Container(color: Colors.red),
+                  onDismissed: (direction) {
+                    _deleteKey(index);
+                  },
+                  child: ListTile(
+                    title: Text(_keys[index]),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/details', arguments: _keys[index]);
+                    },
+                  ),
+                );
+              },
+            ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _addKey,
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}

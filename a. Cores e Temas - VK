@@ -1,0 +1,28 @@
+import 'package:flutter/material.dart';
+
+final Color primaryColor = Color(0xFF123456); // Substitua pelo código de cor do Figma
+final Color secondaryColor = Color(0xFF654321); // Substitua pelo código de cor do Figma
+final Color backgroundColor = Color(0xFFF1F1F1); // Substitua pelo código de cor do Figma
+
+ThemeData appTheme() {
+  return ThemeData(
+    primaryColor: primaryColor,
+    scaffoldBackgroundColor: backgroundColor,
+    appBarTheme: AppBarTheme(
+      backgroundColor: primaryColor,
+      iconTheme: IconThemeData(color: Colors.white),
+      titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(secondaryColor),
+        textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(fontSize: 18)),
+      ),
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        foregroundColor: MaterialStateProperty.all<Color>(primaryColor),
+      ),
+    ),
+  );
+}

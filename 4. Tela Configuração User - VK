@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+
+class SettingsScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Configurações'),
+      ),
+      body: ListView(
+        children: [
+          SwitchListTile(
+            title: Text('Notificações'),
+            value: true,
+            onChanged: (bool value) {
+              // Lógica para ativar/desativar notificações
+            },
+          ),
+          ListTile(
+            title: Text('Tema'),
+            trailing: DropdownButton<String>(
+              value: 'Claro',
+              items: <String>['Claro', 'Escuro'].map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                // Lógica para alterar o tema
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

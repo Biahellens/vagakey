@@ -1,0 +1,260 @@
+flutter create VagaKey
+cd VagaKey
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+// Definindo as cores do design conforme o Figma
+final Color primaryColor = Color(0xFF123456); 
+final Color secondaryColor = Color(0xFF654321); 
+final Color backgroundColor = Color(0xFFF1F1F1); 
+
+// Definindo o tema do app
+ThemeData appTheme() {
+  return ThemeData(
+    primaryColor: primaryColor,
+    scaffoldBackgroundColor: backgroundColor,
+    appBarTheme: AppBarTheme(
+      backgroundColor: primaryColor,
+      iconTheme: IconThemeData(color: Colors.white),
+      titleTextStyle: TextStyle(color: Colors.white, fontSize: 20),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color>(secondaryColor),
+        textStyle: MaterialStateProperty.all<TextStyle>(TextStyle(fontSize: 18)),
+      ),
+    ),
+    textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        foregroundColor: MaterialStateProperty.all<Color>(primaryColor),
+      ),
+    ),
+  );
+}
+
+void main() {
+  runApp(MyApp());
+}
+
+// Estrutura principal do app
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'VagaKey App',
+      theme: appTheme(), // Aplicando o tema ao app
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LoginScreen(),
+        '/home': (context) => HomeScreen(),
+        '/details': (context) => DetailsScreen(),
+        '/settings': (context) => SettingsScreen(),
+      },
+    );
+  }
+}
+
+// Tela de Login com lógica de autenticação simulada
+class LoginScreen extends StatefulWidget {
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  bool _isLoading = false;
+
+  void _login() async {
+    setState(() {
+      _isLoading = true;
+    });
+
+    // Simulação de autenticação (substitua por uma API real)
+    await Future.delayed(Duration(seconds: 2));
+
+    if (_emailController.text == "user@vagakey.com" && _passwordController.text == "password") {
+      Navigator.pushReplacementNamed(context, '/home');
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Credenciais incorretas. Tente novamente.')),
+      );
+    }
+
+    setState(() {
+      _isLoading = false;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextField(
+                controller: _emailController,
+                decoration: InputDecoration(
+                  labelText: 'Email',
+                  border: OutlineInputBorder(),
+                ),
+              ),
+              SizedBox(height: 16),
+              TextField(
+                controller: _passwordController,
+                decoration: InputDecoration(
+                  labelText: 'Senha',
+                  border: OutlineInputBorder(),
+                ),
+                obscureText: true,
+              ),
+              SizedBox(height: 32),
+              _isLoading 
+                  ? CircularProgressIndicator()
+                  : ElevatedButton(
+                      onPressed: _login,
+                      child: Text('Login'),
+                    ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+// Tela Principal para listar as chaves do usuário
+class HomeScreen extends StatefulWidget {
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  List<String> _keys = [];
+
+  void _addKey() {
+    setState(() {
+      _keys.add('Chave ${_keys.length + 1}');
+    });
+  }
+
+  void _deleteKey(int index) {
+    setState(() {
+      _keys.removeAt(index);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Minhas Chaves'),
+      ),
+      body: _keys.isEmpty
+          ? Center(child: Text('Nenhuma chave encontrada.'))
+          : ListView.builder(
+              itemCount: _keys.length,
+              itemBuilder: (context, index) {
+                return Dismissible(
+                  key: Key(_keys[index]),
+                  background: Container(color: Colors.red),
+                  onDismissed: (direction) {
+                    _deleteKey(index);
+                  },
+                  child: ListTile(
+                    title: Text(_keys[index]),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/details', arguments: _keys[index]);
+                    },
+                  ),
+                );
+              },
+            ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _addKey,
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+
+// Tela de Detalhes para uma chave específica
+class DetailsScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final String chave = ModalRoute.of(context)?.settings.arguments as String;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Detalhes da Chave'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              chave,
+              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 16),
+            Text('Data de Criação: 01/01/2024'),
+            SizedBox(height: 8),
+            Text('Validade: 31/12/2024'),
+            SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Clipboard.setData(ClipboardData(text: chave));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text('Chave copiada para o clipboard!')),
+                );
+              },
+              child: Text('Copiar Chave'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+// Tela de Configurações (opcional)
+class SettingsScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Configurações'),
+      ),
+      body: ListView(
+        children: [
+          SwitchListTile(
+            title: Text('Notificações'),
+            value: true,
+            onChanged: (bool value) {
+              // Lógica para ativar/desativar notificações
+            },
+          ),
+          ListTile(
+            title: Text('Tema'),
+            trailing: DropdownButton<String>(
+              value: 'Claro',
+              items: <String>['Claro', 'Escuro'].map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                // Lógica para alterar o tema
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
